@@ -1,5 +1,6 @@
 class CitiesController < ApplicationController
-  def index
-  	@cities = City.all
-  end
+	before_action :authenticate_user!, only: :create
+ 	def index
+  		@cities = City.all
+  	end
 end
