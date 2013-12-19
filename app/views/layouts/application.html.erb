@@ -2,12 +2,15 @@
 <html>
 <head>
   <title>Retourist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+<div class="container">
 <% if notice %>
 	<p class="notice"><%= notice %></p>
 <% end %>
@@ -20,8 +23,9 @@
 <% else %>
 <%= link_to "Sign Up", new_user_registration_path %> | <%= link_to "Log In", new_user_session_path %>
 <% end %>
-
-<%= yield %>
+	
+	<%= yield %>
+</div>
 
 </body>
 </html>

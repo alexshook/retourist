@@ -8,6 +8,7 @@ gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
+gem 'bootstrap-sass', '~> 3.0.3.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -34,6 +35,12 @@ end
 
 # Add security
 gem 'devise', '~> 3.2.2'
+
+# automatically reload your browser when 'view' files are modified.
+group :development do
+  gem 'guard-livereload', require: false
+  gem 'rack-livereload'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
