@@ -20,4 +20,8 @@ class CitiesController < ApplicationController
   		city = City.create safe_city
   		redirect_to city
   	end
+
+    def show
+      @city = City.find params[:id]
+    end
 end
