@@ -40,12 +40,12 @@ gem 'devise', '~> 3.2.2'
 group :development do
   gem 'guard-livereload', require: false
   gem 'rack-livereload'
-  gem 'squlite3'
+  gem 'sqlite3'
 end
 
 # pg is gor PostgreSQL and heroku
 group :production do
-  gem 'pg'
+  gem 'pg', '~> 0.17.1'
   gem 'rails_12factor'
 end
 
