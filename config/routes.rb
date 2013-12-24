@@ -1,4 +1,5 @@
 Retourist::Application.routes.draw do
+  get "interests/index"
   devise_for :admins
   get "cities/index"
   get "users/index"

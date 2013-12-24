@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag "application" %>
-<h1>Retourist</h1>
+<h1><%= link_to "Retourist", root_path %></h1>
 <p>connecting travelers</p>
 
 <%= form_tag '/search', method: :get do %>
@@ -7,7 +7,7 @@
 	<%= text_field_tag :q %>
 	<%= submit_tag "Go!" %>
 <% end %>
-
-<p><%= link_to "Add a City", new_city_path %></p>
-
-<p><%= link_to "Home", root_path %></p>
+<br /><br />
+<p>Sign up or log in to <%= link_to "Add a City", new_city_path %></p>
+<br /><br />
+<p><%= render 'cities' %></p>
