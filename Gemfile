@@ -49,8 +49,8 @@ group :production do
   gem 'rails_12factor'
 end
 
-# Extra authorization for users
-gem 'cancan', '~> 1.6.10'
+# Authorization
+gem 'pundit'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
