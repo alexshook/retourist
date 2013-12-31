@@ -16,7 +16,12 @@
 			<div class="navbar navbar-pills">
 				<div class="navbar-header">
 					<h1><%= link_to "Retourist", root_path, class: 'navbar-brand' %></h1>
-					<p>Experience your destination like a local.</p>
+					<p>Travel like a local.</p>
+					<%= form_tag '/search', method: :get do %>
+						<%= label_tag :q, "Search" %>
+						<%= text_field_tag :q %>
+						<%= submit_tag "Go!" %>
+					<% end %>
 					<% if user_signed_in? %>
 						<%= link_to "My Profile", edit_user_registration_path %> | <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
 					<% else %>
