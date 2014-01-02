@@ -1,8 +1,6 @@
 <h1>Edit a City</h1>
 <%= form_for @city do |f| %>
 	<p><%= f.label :name %></p>
-	<p><%= f.text_field :name, :placeholder => "Type the name of a city." %></p>
-	<p><%= f.label :rating %></p>
-	<p><%= f.text_field :rating, :placeholder => "How much do you like it?" %></p>
+	<p><%= f.text_field :name %></p>
 	<p><%= f.submit %></p>
 <% end %>
