@@ -1,0 +1,54 @@
+<h1>new - Edit My Profile</h1>
+
+<h2>Basic Information</h2>
+
+<%= form_for @user do |f| %>
+	<p><%= f.label :first_name %></p>
+	<p><%= f.text_field :first_name %></p>
+
+	<p><%= f.label :last_name %></p>
+	<p><%= f.text_field :last_name %></p>
+
+	<p><%= f.label :age %></p>
+	<p><%= f.text_field :age %></p>
+
+	<p><%= f.label :city %></p>
+	<p><%= f.text_field :city %></p>
+
+	<p><%= f.label :job_title %></p>
+	<p><%= f.text_field :job_title %></p>
+
+	<p><%= f.label :employer %></p>
+	<p><%= f.text_field :employer %></p>
+
+	<p><%= f.label :employer_description %></p>
+	<p><%= f.text_field :employer_description %></p>
+
+<h2>Favorites</h2>
+
+	<p><%= f.label :brunch %></p>
+	<p><%= f.text_field :brunch %></p>
+
+	<p><%= f.label :dinner %></p>
+	<p><%= f.text_field :dinner %></p>
+
+	<p><%= f.label :fine_dining %></p>
+	<p><%= f.text_field :fine_dining %></p>
+
+	<p><%= f.label :bar %></p>
+	<p><%= f.text_field :bar %></p>
+
+	<p><%= f.label :park %></p>
+	<p><%= f.text_field :park %></p>
+
+	<p><%= f.label :tourist_attraction %></p>
+	<p><%= f.text_field :tourist_attraction %></p>
+
+	<p><%= f.label :weekend_destination %></p>
+	<p><%= f.text_field :weekend_destination %></p>
+
+	<p><%= f.label :neighborhood %></p>
+	<p><%= f.text_field :neighborhood %></p>
+
+	<p><%= f.submit %></p>
+<% end %>

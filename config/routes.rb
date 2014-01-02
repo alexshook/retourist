@@ -1,5 +1,12 @@
 Retourist::Application.routes.draw do
+  get "profiles/index"
   root to: 'high_voltage/pages#show', id: 'index'
+
+  # config/initializers/high_voltage.rb strip pages from url
+  HighVoltage.configure do |config|
+    config.route_drawer = HighVoltage::RouteDrawers::Root
+  end
+  
   get "interests/index"
   get "cities/index"
   get "users/index"
@@ -8,13 +15,11 @@ Retourist::Application.routes.draw do
   devise_for :admins
   devise_for :users, path_names: { :sign_up => "register", :sign_in => "login" }
 
-  resources :cities, only: [ :index, :new, :create, :show, :edit, :update ]
-  resources :users
-
-  # config/initializers/high_voltage.rb strip pages from url
-  HighVoltage.configure do |config|
-    config.route_drawer = HighVoltage::RouteDrawers::Root
+  resources :users do
+    resources :interests, shallow: true
   end
+
+  resources :cities, only: [ :index, :new, :create, :show, :edit, :update ]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
