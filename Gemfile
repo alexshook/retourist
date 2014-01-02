@@ -52,6 +52,9 @@ end
 # Authorization
 gem 'pundit'
 
+# Static Pages
+gem 'high_voltage', '~> 2.1.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
