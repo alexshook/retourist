@@ -1,5 +1,4 @@
 Retourist::Application.routes.draw do
-  get "profiles/index"
   root to: 'high_voltage/pages#show', id: 'index'
 
   # config/initializers/high_voltage.rb strip pages from url
@@ -7,16 +6,17 @@ Retourist::Application.routes.draw do
     config.route_drawer = HighVoltage::RouteDrawers::Root
   end
   
-  get "interests/index"
   get "cities/index"
   get "users/index"
   get "search", to: "search#index"
+  get "profiles/index"
   
   devise_for :admins
   devise_for :users, path_names: { :sign_up => "register", :sign_in => "login" }
+  devise_for :profiles, controllers: { :registrations => 'registrations' }
 
   resources :users do
-    resources :interests, shallow: true
+    resources :profiles, shallow: true
   end
 
   resources :cities, only: [ :index, :new, :create, :show, :edit, :update ]

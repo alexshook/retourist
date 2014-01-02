@@ -1,5 +1,10 @@
-class ProfilesController < ApplicationController
+class Profiles::RegistrationsController < Devise::RegistrationsController
   def index
-  	@profiles = Profile.all
+  end
+
+  def create
+    super
+    @user.build_profile
+    @user.save!
   end
 end
