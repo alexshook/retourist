@@ -5,6 +5,6 @@ class Profiles::RegistrationsController < Devise::RegistrationsController
   def create
     super
     @user.build_profile
-    @user.save!
+    @user.save
   end
 end
