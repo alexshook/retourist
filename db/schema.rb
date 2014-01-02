@@ -30,9 +30,6 @@ ActiveRecord::Schema.define(version: 20131225052205) do
 
   create_table "cities", force: true do |t|
     t.string   "name"
-    t.string   "story"
-    t.integer  "rating"
-    t.integer  "visitors"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

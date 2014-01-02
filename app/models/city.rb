@@ -1,5 +1,5 @@
 class City < ActiveRecord::Base
-	has_many :users
+	belongs_to :users
 	has_many :interests, through: :users
 	validates :name, presence: true
 	def self.search_for(query)

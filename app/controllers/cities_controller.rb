@@ -10,19 +10,26 @@ class CitiesController < ApplicationController
   end
 
   def create
-		safe_city = params.require(:city).permit(:name, :rating)
+		safe_city = params.require(:city).permit(:name)
     city = City.create safe_city
   	redirect_to city
   end
 
   def update
   	@city = City.find params[:id]
-   	safe_city = params.require(:city).permit(:name, :rating)
+   	safe_city = params.require(:city).permit(:name)
   	city = City.create safe_city
 		redirect_to city
  	end
 
   def show
     @city = City.find params[:id]
+  end
+
+  def edit
+    @city = City.find params[:id]
+    safe_city = params.require(:city).permit(:name)
+    city = City.create safe_city
+    redirect_to city
   end
 end

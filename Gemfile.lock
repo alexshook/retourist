@@ -95,8 +95,6 @@ GEM
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
-    pundit (0.2.1)
-      activesupport (>= 3.0.0)
     rack (1.5.2)
     rack-livereload (0.3.15)
       rack
@@ -174,7 +172,6 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   pg (~> 0.17.1)
-  pundit
   rack-livereload
   rails (= 4.0.1)
   rails_12factor

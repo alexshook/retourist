@@ -51,9 +51,6 @@ group :production do
   gem 'rails_12factor'
 end
 
-# Authorization
-gem 'pundit'
-
 # Static Pages
 gem 'high_voltage', '~> 2.1.0'
 
