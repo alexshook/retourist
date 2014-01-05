@@ -3,6 +3,29 @@
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
 
+ <div>Edit Profile Information</div>
+
+  <div><%= f.label :first_name %><br />
+  <%= f.text_field :first_name %></div><br />
+
+  <div><%= f.label :last_name %><br />
+  <%= f.text_field :last_name %></div><br />
+
+  <div><%= f.label :age %><br />
+  <%= f.text_field :age %></div><br />
+
+  <div><%= f.label :location %><br />
+  <%= f.text_field :location %></div><br />
+
+  <div><%= f.label :job_title %><br />
+  <%= f.text_field :job_title %></div><br />
+
+  <div><%= f.label :employer %><br />
+  <%= f.text_field :employer %></div><br />
+
+  <div><%= f.label :employer_description %><br />
+  <%= f.text_field :employer_description %></div><br />
+
   <div><%= f.label :email %><br />
   <%= f.email_field :email, :autofocus => true %></div>
 

@@ -13,7 +13,6 @@ Retourist::Application.routes.draw do
   
   devise_for :admins
   devise_for :users, path_names: { :sign_up => "register", :sign_in => "login" }
-  devise_for :profiles, controllers: { :registrations => 'registrations' }
 
   resources :users do
     resources :profiles, shallow: true
