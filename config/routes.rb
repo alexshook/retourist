@@ -12,11 +12,9 @@ Retourist::Application.routes.draw do
   get "profiles/index"
   
   devise_for :admins
-  devise_for :users, path_names: { :sign_up => "register", :sign_in => "login" }
 
-  resources :users do
-    resources :profiles, shallow: true
-  end
+  devise_for :users, path_names: { :sign_up => "signup", :sign_in => "login" }
+  resources :users, only: [ :index, :new, :create, :show, :edit, :update ]
 
   resources :cities, only: [ :index, :new, :create, :show, :edit, :update ]
 

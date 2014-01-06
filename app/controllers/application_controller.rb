@@ -5,19 +5,31 @@ class ApplicationController < ActionController::Base
 
   # redirect to last url after user registration
   # from devise github
-  after_filter :store_location
+ #  after_filter :store_location
 
-	def store_location
-	  # store last url - this is needed for post-login redirect to whatever the user last visited.
-	  if (request.fullpath != "/users/login" &&
-	      request.fullpath != "/users/register" &&
-	      request.fullpath != "/users/password" &&
-	      !request.xhr?) # don't store ajax calls
-	    session[:previous_url] = request.fullpath 
-	  end
-	end
+	# def store_location
+	#   # store last url - this is needed for post-login redirect to whatever the user last visited.
+	#   if (request.fullpath != "/users/login" &&
+	#       request.fullpath != "/users/register" &&
+	#       request.fullpath != "/users/password" &&
+	#       !request.xhr?) # don't store ajax calls
+	#     session[:previous_url] = request.fullpath 
+	#   end
+	# end
 
-	def after_sign_in_path_for(resource)
-	  session[:previous_url] || root_path
-	end
+	# def after_sign_in_path_for(resource)
+	#   session[:previous_url] || root_path
+	# end
+
+	protected
+
+	# adds custom attributes to devise user model/edit registration page
+	# without this they won't save to the database
+	def devise_parameter_sanitizer
+    	if resource_class == User
+      		User::ParameterSanitizer.new(User, :user, params)
+    	else
+      		super
+    	end
+    end
 end
