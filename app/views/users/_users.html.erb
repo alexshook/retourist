@@ -1,4 +1,5 @@
 <% @users.each do |user| %>
+	<p><%= image_tag user.avatar.url %></p>
 	<p>Hello! My name is <%= user.first_name %> <%= user.last_name %>.</p>
 	<p>I am <%= user.age %> years old and live in <%= user.location %>.</p>
 	<p>I am <%= user.job_title %> at <%= user.employer %>, <%= user.employer_description %>.</p>
