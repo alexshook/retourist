@@ -7,8 +7,9 @@ Retourist::Application.routes.draw do
   end
   
   get "cities/index"
-  get "users", to: "users#show"
   get "search", to: "search#index"
+  get "users/index"
+  # get 'users/:id' => 'users#show'
   
   devise_for :admins
 
