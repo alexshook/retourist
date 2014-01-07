@@ -14,8 +14,6 @@ Retourist::Application.routes.draw do
   devise_for :admins
 
   devise_for :users, path_names: { :sign_up => "signup", :sign_in => "login" }
-  resources :users, only: [ :index, :new, :create, :show, :edit, :update ]
-
   resources :cities, only: [ :index, :new, :create, :show, :edit, :update ]
 
   # The priority is based upon order of creation: first created -> highest priority.
