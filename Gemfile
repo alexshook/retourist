@@ -57,6 +57,8 @@ gem 'high_voltage', '~> 2.1.0'
 # Add user avatars
 gem 'paperclip', '~> 3.0'
 
+gem 'rmagick', '~> 2.13.2'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
