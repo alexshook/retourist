@@ -9,54 +9,75 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
+
+<!--   <p><%= image_tag @user.avatar.url %></p>
+  <p>Hello! My name is <%= @user.first_name %> <%= @user.last_name %>.</p>
+  <p>I am <%= @user.age %> years old and live in <%= @user.location %>.</p>
+  <p>I am <%= @user.job_title %> at <%= @user.employer %>, <%= @user.employer_description %>.</p> -->
+
+
  <h3>Edit Profile</h3>
 
     <div>Upload Profile Photo<br />
       <%= f.file_field :avatar %></div><br />
 
-    <div><%= f.label :first_name %><br />
-    <%= f.text_field :first_name %></div><br />
+    <div><%= f.label :first_name, "Hello! What's your name?" %><br />
+    <%= f.text_field :first_name, :placeholder => "First Name" %></div><br />
 
     <div><%= f.label :last_name %><br />
-    <%= f.text_field :last_name %></div><br />
+    <%= f.text_field :last_name, :placeholder => "Last Name" %></div><br />
 
-    <div><%= f.label :age %><br />
+    <div><%= f.label :age, "How old are you?" %><br />
     <%= f.text_field :age %></div><br />
 
-    <div><%= f.label :location %><br />
+    <div><%= f.label :location, "Where do you live?"  %><br />
     <%= f.text_field :location %></div><br />
 
-    <div><%= f.label :job_title %><br />
+    <div><%= f.label :job_title, "What do you do?"  %><br />
     <%= f.text_field :job_title %></div><br />
 
-    <div><%= f.label :employer %><br />
-    <%= f.text_field :employer %></div><br />
+    <div><%= f.label :employer, "Where do you work/study/etc.?" %><br />
+    <%= f.text_field :employer, :placeholder => "Company or School" %></div><br />
 
-    <div><%= f.label :employer_description %><br />
+    <div><%= f.label :employer_description, "What do you do there?" %><br />
     <%= f.text_field :employer_description %></div><br />
 
   <br />
 
   <h3>Change Password</h3>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div><br />
+    <div><%= f.label :email %><br />
+    <%= f.email_field :email, :autofocus => true %></div><br />
 
-  <div><%= f.label :current_password %><br />
-  <%= f.password_field :current_password %></div>
+    <div><%= f.label :password, "New Password" %><br />
+    <%= f.password_field :password, :autocomplete => "off" %></div>
 
-  <div><%= f.label :password, "New Password" %><br />
-  <%= f.password_field :password, :autocomplete => "off" %></div>
-
-  <div><%= f.label :password_confirmation, "Confirm New Password" %><br />
-  <%= f.password_field :password_confirmation %></div>
+    <div><%= f.label :password_confirmation, "Confirm New Password" %><br />
+    <%= f.password_field :password_confirmation %></div>
 
   <br />
-  <div><%= f.submit "Update Profile" %></div>
+
+  <div>Please enter your current password to make changes to your profile.</div>
+
+  <br />
+
+    <div><%= f.label :current_password %><br />
+    <%= f.password_field :current_password %></div>
+
+  <br />
+
+    <div><%= f.submit "Update Profile" %></div>
+
 <% end %>
 
-<h3>Cancel my account</h3>
+  <br />
 
-<p>Unhappy? <%= button_to "Cancel My Account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+  <h3>Cancel my account</h3>
+
+  <p>Unhappy? <%= button_to "Cancel My Account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %></p>
+
+  <br />
 
 <%= link_to "Back", :back %>
+
+<br />
