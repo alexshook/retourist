@@ -1,9 +1,0 @@
-<h1><%= @profile.name %></h1>
-
-<% @profiles.each do |profile| %>
-	<p>Hello! My name is <%= profile.email %>.</p>
-	<p>I am <%= profile.age %> years old and live in <%= profile.city %>.</p>
-	<p>I am <%= profile.job_title %> at <%= profile.employer %>, <%= profile.employer_description %>.</p>
-<% end %>
-
-<li><%= link_to "Edit Email Address and Password", edit_user_registration_path %>
