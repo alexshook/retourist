@@ -180,7 +180,7 @@ DEPENDENCIES
   high_voltage (~> 2.1.0)
   jbuilder (~> 1.2)
   jquery-rails
-  paperclip
+  paperclip (~> 3.0)
   pg (~> 0.17.1)
   rack-livereload
   rails (= 4.0.1)
