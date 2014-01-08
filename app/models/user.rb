@@ -1,11 +1,15 @@
 class User < ActiveRecord::Base
 	has_one :city
-	has_many :messages_sent, foreign_key: "sender_id"
-	has_many :messages_received, foreign_key: "recipient_id"
+	has_many :messages_sent, primary_key: "user_id", foreign_key: "sender_id"
+	has_many :messages_received, primary_key: "user_id", foreign_key: "recipient_id"
 	has_many :recipients, through: :messages_sent
 	has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png", :path => ":rails_root/public/system/:attachment/:id/:style/:filename", :url => "/system/:attachment/:id/:style/:filename"
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
+	
+	def self.search_for(query)
+		self.where('city LIKE :query', query: "%#{query}%")
+	end
 end

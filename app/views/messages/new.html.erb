@@ -1,16 +1,16 @@
 <h1>Send a message!</h1>
 
-<%= form_for(current_user.messages.build(sender_id: @user.sender_id)) do |f| %>
+<!-- primary key is message id?
+foreign key is sender id -->
+
+<%#= form_tag({controller: "messages", action: "create"}, method: "post") do |f| %>
+
+<%= form_for @message, url: {action: "create"}, method: "post" do |f| %>
+
+<%#= form_for(@messages.create(@message.sender_id)) do |f| %>
+
 	<div><%= f.hidden_field :sender_id %></div>
 	<div><%= f.hidden_field :recipient_id %></div>
-
-<%#= simple_form_for @message do |f| %>
-
-	<p><%= f.label :name, "To:" %></p>
-	<p><%= f.text_field :name %></p>
-
-	<p><%= f.label :name, "From:" %></p>
-	<p><%= f.text_field :name %></p>
 
 	<p><%= f.label :subject, "Subject:" %></p>
 	<p><%= f.text_field :subject %></p>
@@ -18,5 +18,5 @@
 	<p><%= f.label :message_content, "Message:" %></p>
 	<p><%= f.text_area :message_content %></p>
 
-	<p><%= f.submit %></p>
+	<p><%= f.submit "Send" %></p>
 <% end %>

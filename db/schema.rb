@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20140108012109) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "subject"
-    t.string   "message_content"
+    t.text     "message_content"
   end
 
   create_table "users", force: true do |t|

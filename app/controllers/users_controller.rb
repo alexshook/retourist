@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, except: :index
 
   def index
   	@users = User.all
@@ -9,7 +10,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create params[:user]
+    # @user = User.create params[:user]
+    user = User.create user_params
+  end
+
+  def update
+    @user = User.find params[:id]
+    user.update_attributes!(user_params)
+    user = User.update user_params
   end
 
   def show
@@ -18,12 +26,9 @@ class UsersController < ApplicationController
 
   def edit
   	@user = User.find params[:id]
+    user = User.update user_params
   end
 
-  def update
-  	@user = User.find params[:id]
-    user.update_attributes!(user_params)
-  end
 
   private
 
