@@ -9,12 +9,15 @@ Retourist::Application.routes.draw do
   get "cities/index"
   get "search", to: "search#index"
   get "users/index"
+  get "messages/index"
   # get 'users/:id' => 'users#show'
 
   devise_for :users, path_names: { :sign_up => "signup", :sign_in => "login", :index => 'users' }
-  resources :users, only: [ :index ]
+  resources :users, only: [ :index, :show ]
 
   resources :cities, only: [ :index, :new, :create, :show, :edit, :update ]
+
+  resources :messages
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
