@@ -11,7 +11,8 @@ Retourist::Application.routes.draw do
   get "users/index"
   # get 'users/:id' => 'users#show'
 
-  devise_for :users, path_names: { :sign_up => "signup", :sign_in => "login" }
+  devise_for :users, path_names: { :sign_up => "signup", :sign_in => "login", :index => 'users' }
+  resources :users, only: [ :index ]
 
   resources :cities, only: [ :index, :new, :create, :show, :edit, :update ]
 
