@@ -3,10 +3,13 @@ class MessagesController < ApplicationController
 
   def index
   	@messages = Message.all
+	if @messages.empty?
+		flash[:notice] = "No Messages"
+	end
   end
 
   def new
-  	@message = Message.new
+  	@message = Message.new message_params
   end
 
   def create
@@ -21,12 +24,12 @@ class MessagesController < ApplicationController
   end
 
   def show
-  	@message = Message.find params[:id]
+  		@message = Message.find params[:id]
   end
 
   private
 
   def message_params
-    params.require(:message).permit(:subject, :message_content)
+    params.require(:message).permit(:sender_id, :recipient_id, :subject, :message_content)
   end
 end
