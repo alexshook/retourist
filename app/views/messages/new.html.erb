@@ -1,13 +1,6 @@
 <h1>Send a message!</h1>
 
-<!-- primary key is message id?
-foreign key is sender id -->
-
-<%#= form_tag({controller: "messages", action: "create"}, method: "post") do |f| %>
-
 <%= form_for @message, url: {action: "create"}, method: "post" do |f| %>
-
-<%#= form_for(@messages.create(@message.sender_id)) do |f| %>
 
 	<div><%= f.hidden_field :sender_id %></div>
 	<div><%= f.hidden_field :recipient_id %></div>
