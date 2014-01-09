@@ -1,15 +1,19 @@
 <h1>Send a message!</h1>
 
-<%= form_for @message, url: {action: "create"}, method: "post" do |f| %>
+<div class="col-xs-4">
 
-	<div><%= f.hidden_field :sender_id %></div>
-	<div><%= f.hidden_field :recipient_id %></div>
+	<%= form_for @message, url: {action: "create"}, method: "post" do |f| %>
 
-	<p><%= f.label :subject, "Subject:" %></p>
-	<p><%= f.text_field :subject %></p>
+		<div><%= f.hidden_field :sender_id %></div>
+		<div><%= f.hidden_field :recipient_id %></div>
 
-	<p><%= f.label :message_content, "Message:" %></p>
-	<p><%= f.text_area :message_content %></p>
+		<p><%= f.label :subject, "Subject:" %></p>
+		<p><%= f.text_field :subject, class: "form-control" %></p>
 
-	<p><%= f.submit "Send" %></p>
-<% end %>
+		<p><%= f.label :message_content, "Message:" %></p>
+		<p><%= f.text_area :message_content, class: "form-control", rows: "5" %></p>
+
+		<p><%= f.submit "Send", class: "btn btn-default" %></p>
+	<% end %>
+
+</div>
