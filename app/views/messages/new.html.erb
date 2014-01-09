@@ -4,8 +4,8 @@
 
 	<%= form_for @message, url: {action: "create"}, method: "post" do |f| %>
 
-		<div><%= f.hidden_field :sender_id %></div>
-		<div><%= f.hidden_field :recipient_id %></div>
+		<div><%= f.hidden_field :sender_id, value: "sender_id" %></div>
+		<div><%= f.hidden_field :recipient_id, value: "recipient_id" %></div>
 
 		<p><%= f.label :subject, "Subject:" %></p>
 		<p><%= f.text_field :subject, class: "form-control" %></p>

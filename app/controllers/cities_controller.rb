@@ -22,7 +22,6 @@ class CitiesController < ApplicationController
 
   def show
     @city = City.find params[:id]
-    @user = User.find params[:id]
   end
 
   def edit
