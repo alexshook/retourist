@@ -3,9 +3,6 @@ class MessagesController < ApplicationController
 
   def index
   	@messages = Message.all
-  	if @messages.empty?
-  		flash[:notice] = "No Messages"
-  	end
   end
 
   def new
@@ -13,9 +10,10 @@ class MessagesController < ApplicationController
   end
 
   def create
+    @user = User.find params[:message][:recipient_id]
+    current_user.send!(@user)
+
   	@message = Message.new message_params
-  	@message.sender_id = @user_id
-    # User.find_by sender_id
   	if @message.save
   		flash[:notice] = "Message sent!"
   		redirect_to @message

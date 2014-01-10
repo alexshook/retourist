@@ -1,0 +1,5 @@
+<h1>Message content</h1>
+<%= @messages.each do |message| %>
+	<%= message.subject %>
+	<%= message.message_content %>
+<% end %>

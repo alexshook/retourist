@@ -10,7 +10,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    # @user = User.create params[:user]
     user = User.create user_params
   end
 
@@ -29,6 +28,13 @@ class UsersController < ApplicationController
     user = User.update user_params
   end
 
+  def sent_messages
+    @user = User.find params[:id]
+  end
+
+  def received_messages
+    @user = User.find params[:id]
+  end
 
   private
 

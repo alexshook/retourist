@@ -12,7 +12,11 @@ Retourist::Application.routes.draw do
   get "messages/index"
 
   devise_for :users, path_names: { :sign_up => "signup", :sign_in => "login", :index => 'users' }
-  resources :users, only: [ :index, :show ]
+  resources :users, only: [ :index, :show ] do
+    member do
+      get :sent_messages, :received_messages
+    end
+  end
 
   resources :messages, only: [ :index, :new, :create, :show, :destroy ]
 

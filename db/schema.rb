@@ -33,6 +33,9 @@ ActiveRecord::Schema.define(version: 20140109194552) do
     t.datetime "updated_at"
   end
 
+  add_index "messages", ["recipient_id"], name: "index_messages_on_recipient_id"
+  add_index "messages", ["sender_id"], name: "index_messages_on_sender_id"
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false

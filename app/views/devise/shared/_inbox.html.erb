@@ -1,12 +1,12 @@
 <% @user ||= current_user %>
 <div class="inbox">
-  <a href="<%= received_messages_user_path(@user) %>">
+  <a href="<%= received_messages_path(@user) %>">
     <strong id="received" class="stat">
       <%= @user.received_messages.count %>
     </strong>
     received
   </a>
-  <a href="<%= sent_messages_user_path(@user) %>">
+  <a href="<%= sent_messages_path(@user) %>">
     <strong id="sent" class="stat">
       <%= @user.sent_messages.count %>
     </strong>

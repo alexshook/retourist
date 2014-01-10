@@ -17,3 +17,19 @@
 	<% end %>
 
 </div>
+
+
+	<%= form_for(current_user.messages.build(recipient_id: @user.id)) do |f| %>
+  		
+  		<div><%= f.hidden_field :recipient_id %></div>
+
+		<p><%= f.label :subject, "Subject:" %></p>
+		<p><%= f.text_field :subject, class: "form-control" %></p>
+
+		<p><%= f.label :message_content, "Message:" %></p>
+		<p><%= f.text_area :message_content, class: "form-control", rows: "5" %></p>
+
+		<p><%= f.submit "Send", class: "btn btn-default" %></p>
+	<% end %>
+
+
