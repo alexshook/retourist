@@ -59,7 +59,8 @@ gem 'paperclip', '~> 3.0'
 
 gem 'rmagick', '~> 2.13.2'
 
-gem 'simple_form', '~> 3.0.1'
+# Image hosting for heroku
+gem 'cloudinary'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
