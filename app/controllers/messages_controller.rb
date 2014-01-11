@@ -7,23 +7,23 @@ class MessagesController < ApplicationController
 
   def new
   	@message = Message.new
+    @user = User.find params[:user_id]
   end
 
   def create
-    @user = User.find params[:message][:recipient_id]
-    current_user.send!(@user)
-
-  	@message = Message.new message_params
-  	if @message.save
-  		flash[:notice] = "Message sent!"
-  		redirect_to @message
-  	else
-  		render :new
-  	end
+    # @user = User.find params[:id]
+    # @user = User.find(params[:message][:recipient_id])
+  	# @message = Message.new message_params
+  	# if @message.save
+  	# 	flash[:notice] = "Message sent!"
+  	# 	redirect_to @message
+  	# else
+  	# 	render :new
+  	# end
   end
 
   def show
-  		@message = Message.find params[:id]
+  	@message = Message.find params[:id]
   end
 
   # def messaging(other_user)

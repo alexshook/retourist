@@ -9,16 +9,15 @@ Retourist::Application.routes.draw do
   get "cities/index"
   get "search", to: "search#index"
   get "users/index"
-  get "messages/index"
 
   devise_for :users, path_names: { :sign_up => "signup", :sign_in => "login", :index => 'users' }
   resources :users, only: [ :index, :show ] do
     member do
       get :sent_messages, :received_messages
     end
+    resources :messages, only: [ :new, :create, :show ]
   end
 
-  resources :messages, only: [ :index, :new, :create, :show, :destroy ]
 
   resources :cities, only: [ :index, :new, :create, :show, :edit, :update ]
 

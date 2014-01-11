@@ -3,7 +3,7 @@
 	<p>Hello! My name is <%= @user.first_name %> <%= @user.last_name %>.</p>
 	<p>I am <%= @user.age %> years old and live in <%= @user.location %>.</p>
 	<p>I am <%= @user.job_title %> at <%= @user.employer %>, <%= @user.employer_description %>.</p>
-	<p><%= link_to "Message me!", new_message_path %></p>
+	<p><%= link_to "Message me!", new_user_message_path(@user) %></p>
 </div>
 
 <li><%= link_to "Edit Profile", edit_user_registration_path %>
