@@ -8,9 +8,8 @@ class User < ActiveRecord::Base
 
 	has_attached_file :avatar, :styles => 
 		{ :medium => "300x300>", 
-			:thumb => "100x100>" }, 
-		:default_url => "/images/:style/missing.png",
-		:path => ":s3_path_url"
+			:thumb => "100x100>" }
+		# :default_url => "/images/:style/missing.png",
 		# :path => ":rails_root/public/system/:attachment/:id/:style/:filename", 
 		# :url => "/system/:attachment/:id/:style/:filename"
 
