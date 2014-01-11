@@ -1,8 +1,9 @@
 <h1>Send a message!</h1>
 
 <div class="col-xs-4">
-
-	<%= form_for [@user, Message.new] do |f| %>
+	<%= form_for([@user, @message]) do |f| %>
+	<%#= form_for [@user, Message.new] do |f| %>
+	<%#= form_for @message do |f| %>
 
 		<p><%= f.label :subject, "Subject:" %></p>
 		<p><%= f.text_field :subject, class: "form-control" %></p>
@@ -11,7 +12,7 @@
 		<p><%= f.text_area :message_content, class: "form-control", rows: "5" %></p>
 
 		<p><%= f.submit "Send", class: "btn btn-default" %></p>
-		
+
 	<% end %>
 
 </div>

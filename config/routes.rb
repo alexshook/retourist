@@ -18,7 +18,6 @@ Retourist::Application.routes.draw do
     resources :messages, only: [ :new, :create, :show ]
   end
 
-
   resources :cities, only: [ :index, :new, :create, :show, :edit, :update ]
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,25 +1,27 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!
 
-  def index
-  	@messages = Message.all
-  end
-
   def new
   	@message = Message.new
     @user = User.find params[:user_id]
   end
 
   def create
+    # sender_id = current_user_id
     # @user = User.find params[:id]
     # @user = User.find(params[:message][:recipient_id])
-  	# @message = Message.new message_params
-  	# if @message.save
-  	# 	flash[:notice] = "Message sent!"
-  	# 	redirect_to @message
-  	# else
-  	# 	render :new
-  	# end
+    # sender_id
+    # recipient_id
+    # @current_user = user.sender_id
+    # @user = user.recipient_id
+    # @message = Message.new(params[:user]) errors forbidden attributes
+  	@message = Message.new(params[:user])
+  	if @message.save
+  		flash[:notice] = "Message sent!"
+  		redirect_to @message
+  	else
+  		render :new
+  	end
   end
 
   def show
