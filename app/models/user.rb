@@ -6,11 +6,12 @@ class User < ActiveRecord::Base
 	has_many :reverse_messages, foreign_key: "recipient_id", class_name: "Message"
 	has_many :received_messages, through: :reverse_messages, source: :recipient
 
-	has_attached_file :avatar, :styles => { :medium => "300x300>", 
-		:thumb => "100x100>" }, 
+	has_attached_file :avatar, :styles => 
+		{ :medium => "300x300>", 
+			:thumb => "100x100>" }, 
 		:default_url => "/images/:style/missing.png", 
-		:path => ":rails_root/public/system/:attachment/:id/:style/:filename", 
-		:url => "/system/:attachment/:id/:style/:filename"
+		# :path => ":rails_root/public/system/:attachment/:id/:style/:filename", 
+		# :url => "/system/:attachment/:id/:style/:filename"
 
 	# Include default devise modules. Others available are:
 	# :confirmable, :lockable, :timeoutable and :omniauthable
