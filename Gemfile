@@ -43,6 +43,7 @@ group :development do
   gem 'guard-livereload', require: false
   gem 'rack-livereload'
   gem 'sqlite3'
+  gem 'pry-rails'
 end
 
 # pg is gor PostgreSQL and heroku

@@ -3,22 +3,15 @@ class MessagesController < ApplicationController
 
   def new
   	@message = Message.new
-    @user = User.find params[:user_id]
+    @users = User.all
+    # current_user = User.find params[:user_id]
   end
 
   def create
-    # sender_id = current_user_id
-    # @user = User.find params[:id]
-    # @user = User.find(params[:message][:recipient_id])
-    # sender_id
-    # recipient_id
-    # @current_user = user.sender_id
-    # @user = user.recipient_id
-    # @message = Message.new(params[:user]) errors forbidden attributes
-  	@message = Message.new(params[:user])
+    @message = Message.new message_params
   	if @message.save
   		flash[:notice] = "Message sent!"
-  		redirect_to @message
+  		redirect_to user_message_path(current_user, @message)
   	else
   		render :new
   	end
