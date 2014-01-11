@@ -10,8 +10,9 @@ class User < ActiveRecord::Base
 		{ :medium => "300x300>", 
 			:thumb => "100x100>" }, 
 		:default_url => "/images/:style/missing.png",
-		:path => ":rails_root/public/system/:attachment/:id/:style/:filename", 
-		:url => "/system/:attachment/:id/:style/:filename"
+		:path => ":s3_path_url"
+		# :path => ":rails_root/public/system/:attachment/:id/:style/:filename", 
+		# :url => "/system/:attachment/:id/:style/:filename"
 
 	# Include default devise modules. Others available are:
 	# :confirmable, :lockable, :timeoutable and :omniauthable
