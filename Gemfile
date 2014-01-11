@@ -60,6 +60,8 @@ gem 'paperclip', '~> 3.0'
 
 gem 'rmagick', '~> 2.13.2'
 
+gem 'aws-sdk'
+
 # Image hosting for heroku
 gem 'cloudinary'
 
