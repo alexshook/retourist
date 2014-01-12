@@ -1,6 +1,6 @@
 module ApplicationHelper
 	def main_page?
-		if params[:controller]=='high_voltage/pages'
+		if params[:controller] == 'pages' && params[:action] == 'index'
 			"backstretch"
 		end
 	end

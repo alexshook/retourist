@@ -1,10 +1,14 @@
 Retourist::Application.routes.draw do
-  root to: 'high_voltage/pages#show', id: 'index'
+  # root to: 'high_voltage/pages#show', id: 'index'
 
   # config/initializers/high_voltage.rb strip pages from url
-  HighVoltage.configure do |config|
-    config.route_drawer = HighVoltage::RouteDrawers::Root
-  end
+  # HighVoltage.configure do |config|
+  #   config.route_drawer = HighVoltage::RouteDrawers::Root
+  # end
+
+  get "/about", to: "pages#about"
+  get "/contact", to: "pages#contact"
+  root to: "pages#index"
   
   get "cities/index"
   get "search", to: "search#index"
