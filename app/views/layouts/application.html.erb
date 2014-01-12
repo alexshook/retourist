@@ -26,11 +26,11 @@
 
 	  <!-- Collect the nav links, forms, and other content for toggling -->
 	  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	  	<p class="navbar-text">Travel like a local.</p>
 	    <ul class="nav navbar-nav">
-	      <li><%= link_to "ABOUT", page_path('about') %></li>
+	    	<li><%= link_to "Travel like a local.", page_path('about') %></li>
+	      <li><%= link_to "About", page_path('about') %></li>
 	      <li class="dropdown">
-	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">CITIES <b class="caret"></b></a>
+	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cities <b class="caret"></b></a>
 	        <ul class="dropdown-menu">
 	          <li><a href="#">New York</a></li>
 	          <li><a href="#">Los Angeles</a></li>
@@ -42,7 +42,7 @@
 	    <%= form_tag '/search', class: "navbar-form navbar-right", role: "search", method: :get do  %>
 			<div>
 				<%= text_field_tag 'q', nil, :placeholder => "Search", class: "navbar-form" %>
-				<%= submit_tag "Go!", class: "btn btn-default btn-xs" %>
+				<%= submit_tag "Go!", class: "btn btn-default btn-sm"%>
 			</div>
 		<% end %>
 	    <ul class="nav navbar-nav navbar-right">

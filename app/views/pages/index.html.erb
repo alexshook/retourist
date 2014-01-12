@@ -1,5 +1,32 @@
-<body background="http://farm4.staticflickr.com/3792/11821175215_c4d71fce3b_h.jpg"  alt="New York City skyline after sunset" class="img-responsive" style="background-size: cover">
-<br />
+<!-- <body background="http://farm4.staticflickr.com/3792/11821175215_c4d71fce3b_h.jpg"  alt="New York City skyline after sunset" class="img-responsive" style="background-size: cover"> -->
 <div style="text-align: center;">
 	<h2>Seen the tourist attractions? Great. Now get recommendations from a local.</h2>
 </div>
+<div id="carousel-index" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-index" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-index" data-slide-to="1"></li>
+    <li data-target="#carousel-index" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="http://farm4.staticflickr.com/3792/11821175215_c4d71fce3b_h.jpg" alt="New York City skyline after sunset" class="img-responsive">
+    </div>
+    <div class="item">
+      <img src="http://farm3.staticflickr.com/2389/2311968821_02406536b7_o.jpg" alt="New York City skyline after sunset" class="img-responsive">
+    </div>
+    <div class="item">
+      <img src="http://farm4.staticflickr.com/3645/3615847616_2f61b2e36b_o.jpg" alt="New York City skyline after sunset" class="img-responsive">
+    </div>
+  </div>
+
+</div>
+
+<script>
+	$(document).ready(function)() {
+		$('carousel').carousel();
+	};
+</script>
