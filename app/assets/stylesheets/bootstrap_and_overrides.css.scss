@@ -1,17 +1,42 @@
+/* carousel height mod */
 .carousel .item {
-    width: 100%; /*slider width*/
-    max-height: 600px; /*slider height*/
+    width: 100%; 
+    max-height: 600px; 
 }
-.carousel .item img {
-    width: 100%; /*img width*/
+
+/* dropdown dropdown on hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
 }
-/*full width container*/
-@media (max-width: 767px) {
-    .block {
-        margin-left: -20px;
-        margin-right: -20px;
-    }
+
+/* full width mod */
+.container-full {
+	margin: 0 auto;
+	width: 100%;
 }
+
+/* index flat design styles for mid */
+div#mid {
+	background-image: url('http://farm6.staticflickr.com/5041/5284971366_46a24d89fc_o.jpg');
+	background-size: cover;
+	min-height: 600px;
+	max-height: 800px; 
+	padding: 60px;
+	padding: 6rem;
+}
+
+/* sign up page div with padding */
+div#signup {
+	padding: 40px 120px;
+	padding: 4rem 12rem;
+}
+
+/* log in page div with padding */
+div#login {
+	padding: 20px 120px;
+	padding: 2rem 12rem;
+}
+
 
 @import url("//fonts.googleapis.com/css?family=News+Cycle:400,700");
 
