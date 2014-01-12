@@ -1,85 +1,80 @@
-<!-- <body background="http://farm3.staticflickr.com/2843/11850118676_703dd4eeeb_k.jpg" alt="beach umbrellas" style="background-size: cover"> -->
-<h2>My Account</h2>
+<body background="http://farm3.staticflickr.com/2843/11850118676_703dd4eeeb_k.jpg" alt="beach umbrellas" style="background-size: cover">
 
 <div>
+    <h2>My Account</h2>
 
-  <p><%= image_tag @user.avatar.url(:thumb) %></p>
-    
-    <%= devise_error_messages! %>
-    
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-    <% end %>
+      <div><%= image_tag @user.avatar.url(:thumb) %></div>
+        
+        <%= devise_error_messages! %>
+        
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
 
-  <h3>Edit Profile</h3>
+      <h3>Edit Profile</h3>
 
-  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
 
-  <div>Upload Profile Photo<br />
-  <%= f.file_field :avatar %></div><br />
-
+      <div>Upload Profile Photo<br />
+      <%= f.file_field :avatar %></div><br />
 </div>
 
-<div class="form-horizontal" role="form">
+<div class="row">
 
-  <div class="col-xs-4">
+  <div id="editprofile" class="col-md-6">
 
-  <h3>Basic Information</h3>
+    <h3>Basic Information</h3>
 
-    <div><%= f.label :first_name, "Hello! What's your name?" %><br />
-    <%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %></div><br />
+      <div><%= f.label :first_name, "Hello! What's your name?" %><br />
+      <%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %></div><br />
 
-    <div><%= f.label :last_name %><br />
-    <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %></div><br />
+      <div><%= f.label :last_name %><br />
+      <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %></div><br />
 
-    <div><%= f.label :age, "How old are you?" %><br />
-    <%= f.text_field :age, class: "form-control" %></div><br />
+      <div><%= f.label :age, "How old are you?" %><br />
+      <%= f.text_field :age, class: "form-control" %></div><br />
 
-    <div><%= f.label :location, "Where do you live?"  %><br />
-    <%= f.text_field :location, class: "form-control" %></div><br />
+      <div><%= f.label :location, "Where do you live?"  %><br />
+      <%= f.text_field :location, class: "form-control" %></div><br />
 
-    <div><%= f.label :job_title, "What do you do?"  %><br />
-    <%= f.text_field :job_title, class: "form-control" %></div><br />
+      <div><%= f.label :job_title, "What do you do?"  %><br />
+      <%= f.text_field :job_title, class: "form-control" %></div><br />
 
-    <div><%= f.label :employer, "Where do you work/study/etc.?" %><br />
-    <%= f.text_field :employer, placeholder: "Company or School", class: "form-control" %></div><br />
+      <div><%= f.label :employer, "Where do you work/study/etc.?" %><br />
+      <%= f.text_field :employer, placeholder: "Company or School", class: "form-control" %></div><br />
 
-    <div><%= f.label :employer_description, "What do you do there?" %><br />
-    <%= f.text_field :employer_description, class: "form-control" %></div><br />
-
+      <div><%= f.label :employer_description, "What do you do there?" %><br />
+      <%= f.text_field :employer_description, class: "form-control" %></div><br />
   </div>
 
-  <div class="col-xs-4">
+  <div id="editprofile" class="col-md-6">
 
-  <h3>Change Password</h3>
+    <h3>Change Password</h3>
 
-    <div><%= f.label :email %><br />
-    <%= f.email_field :email, :autofocus => true, class: "form-control" %></div><br />
+      <div><%= f.label :email %><br />
+      <%= f.email_field :email, :autofocus => true, class: "form-control" %></div><br />
 
-    <div><%= f.label :password, "New Password" %><br />
-    <%= f.password_field :password, :autocomplete => "off", class: "form-control" %></div><br />
+      <div><%= f.label :password, "New Password" %><br />
+      <%= f.password_field :password, :autocomplete => "off", class: "form-control" %></div><br />
 
-    <div><%= f.label :password_confirmation, "Confirm New Password" %><br />
-    <%= f.password_field :password_confirmation, class: "form-control" %></div><br />
+      <div><%= f.label :password_confirmation, "Confirm New Password" %><br />
+      <%= f.password_field :password_confirmation, class: "form-control" %></div><br />
 
-  <h4>Please enter your current password to make changes to your profile.</h4>
+    <h4>Please enter your current password to make changes to your profile.</h4>
 
-    <br />
+      <br />
 
-    <div><%= f.label :current_password %><br />
-    <%= f.password_field :current_password, class: "form-control" %></div><br />
+      <div><%= f.label :current_password %><br />
+      <%= f.password_field :current_password, class: "form-control" %></div><br />
 
-    <div><%= f.submit "Update Profile", class: "btn btn-default" %></div>
+      <div><%= f.submit "Update Profile", class: "btn btn-default" %></div>
 
-<% end %>
+  <% end %>
 
-  <h3>Cancel my account</h3>
+    <h3>Cancel my account</h3>
 
-  <p>Unhappy with Retourist?</p>
-  <%= button_to "Cancel My Account", registration_path(resource_name), class: "btn btn-default", :data => { :confirm => "Are you sure?" }, :method => :delete %>
-
+    <p>Unhappy with Retourist?</p>
+    <%= button_to "Cancel My Account", registration_path(resource_name), class: "btn btn-default", :data => { :confirm => "Are you sure?" }, :method => :delete %>
   <br />
-
 </div>
-
 </div>

@@ -52,17 +52,12 @@ group :production do
   gem 'rails_12factor'
 end
 
-# Static Pages
-
 # Add user avatars
 gem 'paperclip', '~> 3.0'
 
 gem 'rmagick', '~> 2.13.2'
 
 gem 'aws-sdk'
-
-# Image hosting for heroku
-gem 'cloudinary'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
