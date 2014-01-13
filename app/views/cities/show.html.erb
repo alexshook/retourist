@@ -1,3 +1,6 @@
-<h1><%= @city.name %></h1>
-<%= link_to "Edit", edit_city_path(@city) %>
-
+<div class="city col-6-md">
+	<%= image_tag @city.photo.url %>
+	<h1><%= @city.name %></h1>
+	<p><%= @city.country %>
+	<%#= link_to "Edit", edit_city_path(@city) %>
+</div>

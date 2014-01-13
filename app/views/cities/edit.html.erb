@@ -1,6 +1,20 @@
-<h1>Edit City</h1>
-<%= form_for @city do |f| %>
-	<p><%= f.label :name %></p>
-	<p><%= f.text_field :name %></p>
-	<p><%= f.submit %></p>
-<% end %>
+<div class="col-md-6">
+
+	<h1>Edit City Information</h1>
+	<%= form_for @city do |f| %>
+
+		<br />
+
+		<h4><%= f.label :name %></h4>
+	    <%= f.text_field :name, placeholder: "What city would you like to add?", class: "form-control" %><br />
+
+	    <h4><%= f.label :country %></h4>
+	    <%= f.text_field :country, placeholder: "What country is it located in?", class: "form-control" %><br />
+
+	    <h4>Do you have a photo?</h4><br />
+	    <%= f.file_field :photo %><br /><br />
+
+		<div><%= f.submit "Add City", class: "btn btn-default btn-md" %></div>
+	<% end %>
+
+</div>

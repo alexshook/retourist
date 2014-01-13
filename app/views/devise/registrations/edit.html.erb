@@ -23,10 +23,10 @@
 
     <h3>Basic Information</h3>
 
-      <div><%= f.label :first_name, "Hello! What's your name?" %><br />
+      <div><%= f.label :first_name, "What's your name?" %><br />
       <%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %></div><br />
 
-      <div><%= f.label :last_name %><br />
+      <div><%= f.label :last_name, "Last name?"%><br />
       <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %></div><br />
 
       <div><%= f.label :age, "How old are you?" %><br />
@@ -35,13 +35,13 @@
       <div><%= f.label :location, "Where do you live?"  %><br />
       <%= f.text_field :location, class: "form-control" %></div><br />
 
-      <div><%= f.label :job_title, "What do you do?"  %><br />
-      <%= f.text_field :job_title, class: "form-control" %></div><br />
+      <div><%= f.label :job_title, "What do you do?" %><br />
+      <%= f.text_field :job_title, placeholder: "CEO? Account Executive? Student?", class: "form-control" %></div><br />
 
       <div><%= f.label :employer, "Where do you work/study/etc.?" %><br />
-      <%= f.text_field :employer, placeholder: "Company or School", class: "form-control" %></div><br />
+      <%= f.text_field :employer, class: "form-control" %></div><br />
 
-      <div><%= f.label :employer_description, "What do you do there?" %><br />
+      <div><%= f.label :employer_description, "Tell us more about what you do there?" %><br />
       <%= f.text_field :employer_description, class: "form-control" %></div><br />
 
   <br />

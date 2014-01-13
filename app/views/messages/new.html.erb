@@ -1,22 +1,28 @@
-<h1>Send a message!</h1>
+<body background="http://farm4.staticflickr.com/3604/3569166750_df321bb6ec_o.jpg" style="background-size: cover">
 
-<div class="col-xs-4">
-	<%= form_for([current_user, @message]) do |f| %>
-		<% @users.each do |user| %>
-			<%= f.label :recipient_id, user.first_name %>
-			<%= f.radio_button :recipient_id, user.id %>
+<div class="overlay col-md-6">
+
+	<h1>Send a message!</h1>
+
+	<br />
+
+		<%= form_for([current_user, @message]) do |f| %>
+			<% @users.each do |user| %>
+				<%= f.label :recipient_id, user.first_name %>
+				<%= f.radio_button :recipient_id, user.id %>
+			<% end %>
+
+		<br /><br />
+
+			<p><%= f.label :subject, "Subject:" %></p>
+			<p><%= f.text_field :subject, class: "form-control" %></p>
+
+			<p><%= f.label :message_content, "Message:" %></p>
+			<p><%= f.text_area :message_content, class: "form-control", rows: "5" %></p>
+
+			<%= f.hidden_field :sender_id, value: current_user.id %>
+
+			<p><%= f.submit "Send", class: "btn btn-default" %></p>
+
 		<% end %>
-
-		<p><%= f.label :subject, "Subject:" %></p>
-		<p><%= f.text_field :subject, class: "form-control" %></p>
-
-		<p><%= f.label :message_content, "Message:" %></p>
-		<p><%= f.text_area :message_content, class: "form-control", rows: "5" %></p>
-
-		<%= f.hidden_field :sender_id, value: current_user.id %>
-
-		<p><%= f.submit "Send", class: "btn btn-default" %></p>
-
-	<% end %>
-
 </div>

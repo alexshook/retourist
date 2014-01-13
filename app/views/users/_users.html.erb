@@ -1,6 +1,9 @@
-<% @users.each do |user| %>
-	<p><%= image_tag user.avatar.url(:thumb) %></p>
-	<ul>
-		<li><%= user.first_name %></li>
-	</ul>
-<% end %>
+<div class="col-md-6">
+	<h2>City Experts</h2>
+
+	<% @users.each do |user| %>
+		<div><%= image_tag user.avatar.url(:thumb) %></div>
+		<div><%= user.first_name %> lives in <%= user.location %></div>
+		<br />
+	<% end %>
+</div>

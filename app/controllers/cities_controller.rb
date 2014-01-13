@@ -27,12 +27,12 @@ class CitiesController < ApplicationController
   def edit
     @city = City.find params[:id]
     city = City.update safe_city
-    redirect_to city
+    redirect_to @city
   end
 
   private
 
   def safe_city
-    params.require(:city).permit(:name)
+    params.require(:city).permit(:photo, :name, :country)
   end
 end

@@ -1,1 +1,9 @@
-<p><%= render 'cities' %></p>
+<body background="http://farm6.staticflickr.com/5085/5284981126_3d00bea31e_o.jpg" style="background-size:cover">
+
+<div class="overlay col-md-6">
+	<p><%= render 'cities' %></p>
+
+	<h3>Can't find what you're looking for?<h3>
+	<%= link_to "Add a City", new_city_path(@city), class:"btn btn-default btn-md" %>
+
+</div>

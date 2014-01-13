@@ -2,6 +2,12 @@
 .dropdown:hover .dropdown-menu {
     display: block;
 }
+ 
+@media (min-width: 993px) and (max-width: 1200px) {
+  .glyphicon {
+    font-size:16px;
+  }
+}
 
 /* index page style for glyphicon */
 div#globe {
@@ -15,7 +21,7 @@ div#globe {
 }
 
 /* index page styles */
-div#indexpage {
+#indexpage {
   font-size: 46px;
   font-size: 4.6rem;
   color: #e0e0e0;
@@ -23,12 +29,12 @@ div#indexpage {
   background: rgba(0,0,0,.5);
   border-radius: 15px;
   padding: 10px;
-  margin: 100px auto auto;
-  margin: 10rem auto auto;
+  margin: 125px auto auto;
+  margin: 12.5rem auto auto;
 }
 
 /* white overlay for columns */
-div#overlay {
+.overlay {
   background: rgba(255,255,255,.6);
   border-radius: 15px;
   padding: 25px;
@@ -47,6 +53,10 @@ div#editprofile {
   background: rgba(255,255,255,.6);
   border-radius: 15px;
   padding: 20px;
+}
+
+.city {
+  text-align: center;
 }
 
 @import url("//fonts.googleapis.com/css?family=News+Cycle:400,700");

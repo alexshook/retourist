@@ -1,21 +1,23 @@
-<div id="overlaycenter">
+<div class="overlaycenter">
 
-	<p><%= image_tag @user.avatar.url %></p>
-	<h3>Hello! My name is <%= @user.first_name %> <%= @user.last_name %>.</h3>
-	<p>I am <%= @user.age %> years old and live in <%= @user.location %>.</p>
-	<p>I am <%= @user.job_title %> at <%= @user.employer %>, <%= @user.employer_description %>.</p>
-	<p><%= link_to "Message me!", new_user_message_path(@user) %></p>
+	<div>
+
+		<p><%= image_tag @user.avatar.url %></p>
+		<h3>Hello! My name is <%= @user.first_name %> <%= @user.last_name %>.</h3>
+		<p>I am <%= @user.age %> years old and live in <%= @user.location %>.</p>
+		<p>I am <%= @user.job_title %> at <%= @user.employer %>, <%= @user.employer_description %>.</p>
+
+	</div>
+
+	<br />
+
+	<div>
+		<%= link_to "Ask me about my city!", new_user_message_path(@user), class:"btn btn-default btn-md" %>
+	</div>
 
 <br />
 <br />
 
 <iframe src='https://a.tiles.mapbox.com/v3/alexshook.h077lbpb.html' width='70%' height='350'></iframe>
-
-<br />
-<br />
-
-	<% if user_signed_in? %>
-		<%= link_to "Edit Profile", edit_user_registration_path, class:"btn btn-default btn-md" %>
-	<% end -%>
 
 </div>
