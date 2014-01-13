@@ -1,5 +1,5 @@
 <div class="city col-6-md">
-	<%= image_tag @city.photo.url %>
+	<%= image_tag @city.photo.url(:medium) %>
 	<h1><%= @city.name %></h1>
 	<p><%= @city.country %>
 	<%#= link_to "Edit", edit_city_path(@city) %>
