@@ -1,1 +1,9 @@
+<% @user ||= current_user %>
+<div class="inbox">
+  <a href="<%= received_messages_user_path(@user) %>">
+    <strong id="received" class="stat">
+      <%= @user.received_messages.count %>
+    </strong>
+    messages received
+
 <h4><%= link_to "Send another message", new_user_message_path(@user) %></h4>

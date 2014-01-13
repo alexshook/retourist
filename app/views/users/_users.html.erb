@@ -3,7 +3,7 @@
 
 	<% @users.each do |user| %>
 		<div><%= image_tag user.avatar.url(:thumb) %></div>
-		<div><%= user.first_name %> lives in <%= user.location %></div>
+		<div><%= user.first_name %> lives in <%= user.location %>. <%= link_to "View Profile", user_path(user.id) %></div>
 		<br />
 	<% end %>
 </div>
