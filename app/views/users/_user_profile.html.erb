@@ -1,9 +1,12 @@
-<div style="text-align: center;">
+<div id="overlaycenter">
+
 	<p><%= image_tag @user.avatar.url %></p>
-	<p>Hello! My name is <%= @user.first_name %> <%= @user.last_name %>.</p>
+	<h3>Hello! My name is <%= @user.first_name %> <%= @user.last_name %>.</h3>
 	<p>I am <%= @user.age %> years old and live in <%= @user.location %>.</p>
 	<p>I am <%= @user.job_title %> at <%= @user.employer %>, <%= @user.employer_description %>.</p>
 	<p><%= link_to "Message me!", new_user_message_path(@user) %></p>
+
+	<%= link_to "Edit Profile", edit_user_registration_path, class:"btn btn-default btn-md" %>
 </div>
 
-<li><%= link_to "Edit Profile", edit_user_registration_path %>
+<span class="glyphicon glyphicon-globe"></span>

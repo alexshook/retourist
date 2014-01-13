@@ -37,10 +37,10 @@
 	        </ul>
 	      </li>
 	    </ul>	    
-	    <%= form_tag '/search', class: "navbar-form navbar-right", role: "search", method: :get do  %>
+	    <%= form_tag '/search', class: "navbar-form navbar-right", method: :get do  %>
 			<div>
 				<%= text_field_tag 'q', nil, :placeholder => "Where are you going?", class: "navbar-form" %>
-				<%= submit_tag "Go!", class: "button"%>
+				<%= submit_tag "Go!" %>
 			</div>
 		<% end %>
 	    <ul class="nav navbar-nav navbar-right">

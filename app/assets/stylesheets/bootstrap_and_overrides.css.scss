@@ -3,33 +3,46 @@
     display: block;
 }
 
+/* index page style for glyphicon */
+div#globe {
+  text-align: center;
+  color: #e0e0e0;
+  opacity: .5;
+  font-size: 350px;
+  font-size: 35rem;
+}
+
 /* index page styles */
 div#indexpage {
-  font-size: 32px;
-  font-size: 3.2rem;
-  color: #FFF;
+  font-size: 46px;
+  font-size: 4.6rem;
+  color: #e0e0e0;
   text-align: center;
-  margin-top: 70px;
-  margin-top: 7rem;
-  background: #000;
-  opacity: .5;
+  background: rgba(0,0,0,.5);
+  border-radius: 15px;
+  padding: 10px;
 }
 
-/* sign up page div with padding */
-div#signup {
-	padding: 40px 120px;
-	padding: 4rem 12rem;
+/* white overlay for columns */
+div#overlay {
+  background: rgba(255,255,255,.6);
+  border-radius: 15px;
+  padding: 25px;
 }
 
-/* log in page div with padding */
-div#login {
-	padding: 20px 120px;
-	padding: 2rem 12rem;
+/* white overlay for columns and centered alignment*/
+div#overlaycenter {
+  background: rgba(255,255,255,.6);
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
 }
 
-/* edit profile page */
+/* white overlay for columns next to each other left */
 div#editprofile {
   background: rgba(255,255,255,.6);
+  border-radius: 15px;
+  padding: 20px;
 }
 
 @import url("//fonts.googleapis.com/css?family=News+Cycle:400,700");
