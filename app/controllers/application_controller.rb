@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
 	# adds custom attributes to devise user model/edit registration page
 	# without this they won't save to the database
 	def configure_permitted_parameters
-		devise_parameter_sanitizer.for(:account_update).push :first_name, :last_name, :age, :location, :employer, :employer_description, :avatar, :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at
+		devise_parameter_sanitizer.for(:account_update).push :first_name, :last_name, :age, :location, :job_title, :employer, :employer_description, :avatar, :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at
 	end	
     	# if resource_class == User
      #  		User::ParameterSanitizer.new(User, :user, params)
