@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def new
   	@user = User.create
+    binding:pry
   end
 
   def create
