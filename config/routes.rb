@@ -2,7 +2,7 @@ Retourist::Application.routes.draw do
   root to: "pages#index"
   get "/about", to: "pages#about"
   get "/contact", to: "pages#contact"
-  
+
   get "cities/index"
   get "search", to: "search#index"
   get "users/index"

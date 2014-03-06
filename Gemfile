@@ -59,6 +59,8 @@ gem 'rmagick', '~> 2.13.2'
 
 gem 'aws-sdk'
 
+gem 'rake', '~> 10.1.1'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
