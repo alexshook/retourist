@@ -1,5 +1,4 @@
-<!DOCTYPE htm
-	l>
+<!DOCTYPE html>
 <html>
 <head>
   <title>Retourist</title>
@@ -42,7 +41,7 @@
 	        </ul>
 	      </li>
 	    	<li><%= link_to "Find a City Expert", users_path %></li>
-	    </ul>	    
+	    </ul>
 	    <%= form_tag '/search', class: "navbar-form navbar-right", method: :get do  %>
 			<div>
 				<%= text_field_tag 'q', nil, :placeholder => "Where are you going?", class: "navbar-form" %>
@@ -74,7 +73,7 @@
 		<% if alert %>
 			<p class="alert"><%= alert %></p>
 		<% end %>
-		
+
 		<%= yield %>
 	</div>
 </body>
