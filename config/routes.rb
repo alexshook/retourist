@@ -3,9 +3,7 @@ Retourist::Application.routes.draw do
   get "/about", to: "pages#about"
   get "/contact", to: "pages#contact"
 
-  get "cities/index"
   get "search", to: "search#index"
-  get "users/index"
 
   devise_for :users, path_names: { :sign_up => "signup", :sign_in => "login", :index => 'users' }
   resources :users, only: [ :index, :show ] do

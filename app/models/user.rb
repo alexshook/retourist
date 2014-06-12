@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	has_one :city
+	belongs_to :city
 
 	has_many :messages, foreign_key: "sender_id"
 	has_many :sent_messages, through: :messages, source: :sender
@@ -18,8 +18,8 @@ class User < ActiveRecord::Base
 
 	has_attached_file :avatar, :styles =>
 		{ :medium => "300x300>",
-			:thumb => "100x100>" }
-		# :default_url => "/images/:style/missing.png",
+			:thumb => "100x100>" },
+		 :default_url => "http://lorempixel.com/400/320/people/"
 		# :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
 		# :url => "/system/:attachment/:id/:style/:filename"
 
@@ -31,7 +31,8 @@ class User < ActiveRecord::Base
     	messages.find_by(recipient_id: other_user.id)
   	end
 
-  	def send!(other_user)
-    	messages.create!(recipient_id: other_user.id)
-  	end
+	def send!(other_user)
+  	messages.create!(recipient_id: other_user.id)
+	end
+
 end

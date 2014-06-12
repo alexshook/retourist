@@ -9,6 +9,7 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
+
 <body id="<%= main_page? %>">
 
 	<nav class="navbar navbar-default  navbar-fixed-top" role="navigation">
@@ -31,18 +32,15 @@
 	      <li class="dropdown">
 	        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cities <b class="caret"></b></a>
 	        <ul class="dropdown-menu">
-	          <li><a href="#">New York</a></li>
-	          <li><a href="#">Dublin</a></li>
-	          <li><a href="#">Sorrento</a></li>
-	          <li><a href="#">Kyoto</a></li>
-	          <li><a href="#">Dubrovnik</a></li>
-	          <li><a href="#">Willemstad</a></li>
+						<% City.all.each do |city| %>
+							<li><%= link_to city.name, city %></li>
+						<% end %>
 	          <li class="divider"></li>
 	          <li><%= link_to "View All", cities_path %></li>
 	        </ul>
 	      </li>
 	    	<li><%= link_to "Find a City Expert", users_path %></li>
-	    </ul>	    
+	    </ul>
 	    <%= form_tag '/search', class: "navbar-form navbar-right", method: :get do  %>
 			<div>
 				<%= text_field_tag 'q', nil, :placeholder => "Where are you going?", class: "navbar-form" %>
@@ -66,6 +64,7 @@
 	    </ul>
 	  </div><!-- /.navbar-collapse -->
 	</nav>
+
 	<div class="container">
 		<% if notice %>
 			<p class="notice"><%= notice %></p>
@@ -74,8 +73,9 @@
 		<% if alert %>
 			<p class="alert"><%= alert %></p>
 		<% end %>
-		
+
 		<%= yield %>
 	</div>
+
 </body>
 </html>

@@ -1,7 +1,7 @@
 class CitiesController < ApplicationController
 	before_action :authenticate_user!, except: :index
 
- 	def index
+	def index
   	@cities = City.all
   end
 
@@ -10,13 +10,13 @@ class CitiesController < ApplicationController
   end
 
   def create
-    city = City.create safe_city
+    city = City.create city_params
   	redirect_to city
   end
 
   def update
   	@city = City.find params[:id]
-  	city = City.update safe_city
+  	city = City.update city_params
 		redirect_to city
  	end
 
@@ -26,13 +26,12 @@ class CitiesController < ApplicationController
 
   def edit
     @city = City.find params[:id]
-    city = City.update safe_city
+    city = City.update city_params
     redirect_to @city
   end
 
   private
-
-  def safe_city
+  def city_params
     params.require(:city).permit(:photo, :name, :country)
   end
 end
